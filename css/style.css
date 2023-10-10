@@ -36,5 +36,5 @@
 
 img{
     max-height: 1000px;
-    justify-content: space-around;
+    display: none;
 }

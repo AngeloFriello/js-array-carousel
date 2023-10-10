@@ -1,29 +1,33 @@
 // - MILESTONE 1
 //     - Per prima cosa, creiamo il markup statico: costruiamo il container e inseriamo un’immagine grande al centro: avremo così la struttura base e gli stili pronti per poterci poi concentrare solamente sull’aspetto logico.
-    const images = [
-        '../img/01.webp',
-        '../img/02.webp',
-        '../img/03.webp',
-        '../img/04.webp',
-    ]
-    let imagesN = images.length
-    console.log(imagesN)
+const images = [
+    './img/01.webp',
+    './img/02.webp',
+    './img/03.webp',
+    './img/04.webp',
+    './img/05.webp',
+]
+let imagesN = images.length
+console.log(imagesN)
 // - MILESTONE 2
 //     - Adesso rimuoviamo tutto il markup statico e inseriamo tutte le immagini dinamicamente servendoci dell’array fornito e un semplice ciclo for che concatena un template literal.
 for (i = 0; i < images.length; i++) {
-    const currentImages = images[i];
-    console.log(currentImages)  
-    let divDOMElement = `
-    <div class='container'>
-        <div class='row'>
-            <div class='col-12'>
-                
-            </div>
-        </div>
-    </div>
-    `
-    
+
+const currentImages = images[i];
+
+console.log(currentImages);
+
+let corouselDOMElement = document.querySelector('.carousel');
+
+let imageDOMElement = `
+<img src="${currentImages}" alt="" class="display-block">
+`;
+
+corouselDOMElement.innerHTML += imageDOMElement;
+
 }
+addEventListener('click')
+
 
 
 
