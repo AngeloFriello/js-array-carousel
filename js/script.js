@@ -20,13 +20,23 @@ console.log(currentImages);
 let corouselDOMElement = document.querySelector('.carousel');
 
 let imageDOMElement = `
-<img src="${currentImages}" alt="" class="display-block">
+<img src="${currentImages}" alt="" class='active'>
 `;
-
 corouselDOMElement.innerHTML += imageDOMElement;
 
 }
-addEventListener('click')
+console.log(images)
+
+
+
+const buttonTopDOMElement = document.querySelector('.clicca-su');
+const buttonBottomDOMElement = document.querySelector('.clicca-giu');
+
+buttonBottomDOMElement.addEventListener('click', function (event){
+
+
+
+})
 
 
 
