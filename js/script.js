@@ -1,11 +1,10 @@
 // - MILESTONE 1
 //     - Per prima cosa, creiamo il markup statico: costruiamo il container e inseriamo un’immagine grande al centro: avremo così la struttura base e gli stili pronti per poterci poi concentrare solamente sull’aspetto logico.
     const images = [
-        'https://picsum.photos/200/300',
-        'https://picsum.photos/200/300',
-        'https://picsum.photos/200/300',
-        'https://picsum.photos/200/300',
-        'https://picsum.photos/200/300',
+        '../img/01.webp',
+        '../img/02.webp',
+        '../img/03.webp',
+        '../img/04.webp',
     ]
     let imagesN = images.length
     console.log(imagesN)
@@ -14,8 +13,16 @@
 for (i = 0; i < images.length; i++) {
     const currentImages = images[i];
     console.log(currentImages)  
-    let divDOMElement = document.querySelector('.col-12')
-    divDOMElement.innerHTML = currentImages
+    let divDOMElement = `
+    <div class='container'>
+        <div class='row'>
+            <div class='col-12'>
+                
+            </div>
+        </div>
+    </div>
+    `
+    
 }
 
 

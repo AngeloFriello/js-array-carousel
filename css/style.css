@@ -5,8 +5,36 @@
 }
 
 .container{
-    width: 1000px;
-    height: 600px;
+    max-width: 1500px;
+    height: 1000px;
     margin: 0 auto;
 }
 
+.row{
+    height: 100%;
+    width: 100%;
+}
+
+.col-12{
+    position: relative;
+    height: 100%;
+    display: flex;
+}
+
+.pa-t{
+    position: absolute;
+    top: 0px;
+    left: 50%;
+}
+
+.pa-b{
+    position:absolute;
+    bottom: 0px;
+    left: 50%;
+    
+}
+
+img{
+    max-height: 1000px;
+    justify-content: space-around;
+}
