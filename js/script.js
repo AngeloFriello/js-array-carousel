@@ -14,11 +14,9 @@ console.log(imagesN);
 
 
 for (i = 0; i < images.length; i++) {
-
 console.log(i)
 
 const currentImages = images[i];
-
 console.log(currentImages);
 
 let imageDOMElement = `<img src="${currentImages}" alt="" class='carousel__item'>`;
@@ -28,6 +26,7 @@ carouselDOMElement.innerHTML += imageDOMElement;
 }
 
 const itemDOMElements = document.querySelectorAll('.carousel__item');
+
 console.log(itemDOMElements)
 
 let currentIdex = 0;
@@ -35,41 +34,43 @@ let currentIdex = 0;
 itemDOMElements[currentIdex].classList.add('active');
 
 const buttonTopDOMElement = document.querySelector('.clicca-su');
+
 const buttonBottomDOMElement = document.querySelector('.clicca-giu');
 
 
-//evento avanti
+//evento click avanti
 
 
 buttonTopDOMElement.addEventListener('click', function (event){
     
-    
-  
-
-
-
-if (currentIdex >= 5) {
-    
-    currentIdex += 0
-
-}else{
+    console.log("Images Length", images.length);
+ 
     itemDOMElements[currentIdex].classList.remove('active');
-
-    currentIdex += 1;
     
+    if (currentIdex >= (images.length - 1)) {
+        
+        currentIdex = 0;
+    }else{
+        currentIdex += 1;
+    }
     itemDOMElements[currentIdex].classList.add('active');
-}
-
+    
+    console.log(images.length, [i])
 })
 
-
+//evento click indietro
 buttonBottomDOMElement.addEventListener('click', function (event){
 
-itemDOMElements[currentIdex].classList.remove('active');
+    itemDOMElements[currentIdex].classList.remove('active');
+    
+    if (currentIdex <= 0) {
+        
+        currentIdex = (images.length - 1);
+    }else{
+        currentIdex -= 1;
+    }
 
-currentIdex -= 1;
-
-itemDOMElements[currentIdex].classList.add('active');
+    itemDOMElements[currentIdex].classList.add('active');
 	
 
 })
