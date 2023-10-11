@@ -37,21 +37,41 @@ itemDOMElements[currentIdex].classList.add('active');
 const buttonTopDOMElement = document.querySelector('.clicca-su');
 const buttonBottomDOMElement = document.querySelector('.clicca-giu');
 
+
+//evento avanti
+
+
 buttonTopDOMElement.addEventListener('click', function (event){
+    
+    
+  
 
-currentIdex + 1;
 
-itemDOMElements[currentIdex].classList.remove('active');
 
+if (currentIdex >= 5) {
+    
+    currentIdex += 0
+
+}else{
+    itemDOMElements[currentIdex].classList.remove('active');
+
+    currentIdex += 1;
+    
+    itemDOMElements[currentIdex].classList.add('active');
+}
 
 })
 
 
+buttonBottomDOMElement.addEventListener('click', function (event){
 
+itemDOMElements[currentIdex].classList.remove('active');
 
-	// prenedere la slide attiva
-	// togliere la classe active alla slide attiva
+currentIdex -= 1;
 
-	// prendere la slide successiva
-	// togliere aggiungere alla slide successiva la classe active
-	// incrementare il valore di currentIndex
+itemDOMElements[currentIdex].classList.add('active');
+	
+
+})
+	
+	
