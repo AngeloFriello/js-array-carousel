@@ -1,5 +1,3 @@
-// - MILESTONE 1
-//     - Per prima cosa, creiamo il markup statico: costruiamo il container e inseriamo un’immagine grande al centro: avremo così la struttura base e gli stili pronti per poterci poi concentrare solamente sull’aspetto logico.
 const images = [
     './img/01.webp',
     './img/02.webp',
@@ -7,33 +5,43 @@ const images = [
     './img/04.webp',
     './img/05.webp',
 ]
-let imagesN = images.length
-console.log(imagesN)
-// - MILESTONE 2
-//     - Adesso rimuoviamo tutto il markup statico e inseriamo tutte le immagini dinamicamente servendoci dell’array fornito e un semplice ciclo for che concatena un template literal.
+
+const carouselDOMElement = document.querySelector('.carousel');
+console.log(carouselDOMElement, images);
+
+let imagesN = images.length;
+console.log(imagesN);
+
+
 for (i = 0; i < images.length; i++) {
+
+console.log(i)
 
 const currentImages = images[i];
 
 console.log(currentImages);
 
-let corouselDOMElement = document.querySelector('.carousel');
+let imageDOMElement = `<img src="${currentImages}" alt="" class='carousel__item'>`;
 
-let imageDOMElement = `
-<img src="${currentImages}" alt="" class='active'>
-`;
-corouselDOMElement.innerHTML += imageDOMElement;
+carouselDOMElement.innerHTML += imageDOMElement;
 
 }
-console.log(images)
 
+const itemDOMElements = document.querySelectorAll('.carousel__item');
+console.log(itemDOMElements)
 
+let currentIdex = 0;
+
+itemDOMElements[currentIdex].classList.add('active');
 
 const buttonTopDOMElement = document.querySelector('.clicca-su');
 const buttonBottomDOMElement = document.querySelector('.clicca-giu');
 
-buttonBottomDOMElement.addEventListener('click', function (event){
+buttonTopDOMElement.addEventListener('click', function (event){
 
+currentIdex + 1;
+
+itemDOMElements[currentIdex].classList.remove('active');
 
 
 })
@@ -41,7 +49,9 @@ buttonBottomDOMElement.addEventListener('click', function (event){
 
 
 
-// - Tutte le immagini saranno nascoste, tranne la prima, che avrà una classe specifica che la renderà visibile.
-//     - Al termine di questa fase ci ritroveremo con lo stesso slider stilato nella milestone 1, ma costruito dinamicamente attraverso JavaScript.
-// - MILESTONE 3
-//     - Al click dell’utente sulle frecce, il programma cambierà l’immagine attiva, che quindi verrà visualizzata al posto della precedente.
+	// prenedere la slide attiva
+	// togliere la classe active alla slide attiva
+
+	// prendere la slide successiva
+	// togliere aggiungere alla slide successiva la classe active
+	// incrementare il valore di currentIndex
